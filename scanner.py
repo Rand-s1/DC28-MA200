@@ -607,7 +607,7 @@ def scan_symbols(base: str, symbols: List[str], granularity: str, signal_types: 
                 
                 if has_golden_cross and "金叉信号" in signal_types:
                     note = ""
-                    if candle_count < Config.MIN_CANDLES_RELIABLE + 50:
+                    if candle_count < Config.MIN_CANDLES_RELIABLE:
                         note = f"数据较少({candle_count}根)"
                     
                     results.append({
@@ -626,7 +626,7 @@ def scan_symbols(base: str, symbols: List[str], granularity: str, signal_types: 
                     
                 elif has_death_cross and "死叉信号" in signal_types:
                     note = ""
-                    if candle_count < Config.MIN_CANDLES_RELIABLE + 50:
+                    if candle_count < Config.MIN_CANDLES_RELIABLE:
                         note = f"数据较少({candle_count}根)"
                     
                     results.append({
